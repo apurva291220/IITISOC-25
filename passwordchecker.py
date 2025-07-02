@@ -5,7 +5,7 @@ import string
 def load_common_passwords(filename):
     with open(filename, 'r', encoding='utf-8', errors='ignore') as f:
         return set(line.strip().lower() for line in f if line.strip())
-COMMON_PASSWORDS = load_common_passwords('common-passwords.txt')
+COMMON_PASSWORDS = load_common_passwords('common_passwords.txt')
 
 
 def check_password_strength(password):
