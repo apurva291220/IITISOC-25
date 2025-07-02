@@ -1,7 +1,12 @@
 import re #to detect pattern, regular expression
 import string
 
-COMMON_PASSWORDS = {"password","QWERTY", "123456", "qwerty", "abcd", "welcome", "abc123", "1111111"}  # Example set
+#COMMON_PASSWORDS = {"password","QWERTY", "123456", "qwerty", "abcd", "welcome", "abc123", "1111111"}  # Example set
+def load_common_passwords(filename):
+    with open(filename, 'r', encoding='utf-8', errors='ignore') as f:
+        return set(line.strip().lower() for line in f if line.strip())
+COMMON_PASSWORDS = load_common_passwords('common-passwords.txt')
+
 
 def check_password_strength(password):
     recommendations = [] #suggestions
