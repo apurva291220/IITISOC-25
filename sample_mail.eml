@@ -1,0 +1,26 @@
+From: "Bank Support" <support@yourbank.com>
+Reply-To: scammer@evil.com
+To: user@example.com
+Subject: Urgent: Verify Your Account Now!
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="boundary123"
+
+--boundary123
+Content-Type: text/plain; charset="UTF-8"
+
+Dear Customer,
+
+We have detected unusual activity in your account. Please verify your account immediately to avoid suspension.
+
+Click here to verify: http://secure-login.yourbank.com/login
+
+Thank you,
+Your Bank Team
+
+--boundary123
+Content-Type: application/octet-stream; name="update_account.js"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="update_account.js"
+
+dmFyIHggPSAiVGhpcyBpcyBhIG1hbGljaW91cyBzY3JpcHQhIjsK
+--boundary123--
