@@ -1,5 +1,7 @@
 import re #to detect pattern, regular expression
 import string
+import tkinter as tk
+from tkinter import messagebox
 
 #COMMON_PASSWORDS = {"password","QWERTY", "123456", "qwerty", "abcd", "welcome", "abc123", "1111111"}  # Example set
 def load_common_passwords(filename):
@@ -63,14 +65,31 @@ def check_password_strength(password):
 
     return strength, recommendations
 
+# GUI part 
+def run_gui():
+    def check():
+        password = entry.get()
+        strength, recommendations = check_password_strength(password)
+        result = f"Password Strength: {strength}\n\n"
+        if recommendations:
+            result += "Recommendations:\n" + "\n".join(f"- {r}" for r in recommendations)
+        else:
+            result += "Your password is strong. Good job!"
+        messagebox.showinfo("Result", result)
+
+    root = tk.Tk()
+    root.title("Password Strength Checker")
+    root.geometry("400x250")
+
+    tk.Label(root, text="Enter your password:").pack(pady=10)
+    entry = tk.Entry(root, show="*", width=30)
+    entry.pack(pady=5)
+
+    tk.Button(root, text="Check Strength", command=check).pack(pady=15)
+
+    root.mainloop()
+    
 if __name__ == "__main__":
-    password = input("Enter your password: ")
-    print(f"-> Password Length: {len(password)}") 
-    strength, recommendations = check_password_strength(password)
-    print(f"-> Password Strength: {strength}")
-    if recommendations:
-        print("-> Recommendations to improve your password:")
-        for rec in recommendations:
-            print(f"   - {rec}")
-    else:
-        print("Your password is strong. Good job!")
+    run_gui()
+
+
