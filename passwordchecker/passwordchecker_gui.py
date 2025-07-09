@@ -7,7 +7,7 @@ from tkinter import messagebox
 def load_common_passwords(filename):
     with open(filename, 'r', encoding='utf-8', errors='ignore') as f:
         return set(line.strip().lower() for line in f if line.strip())
-COMMON_PASSWORDS = load_common_passwords('common_password')
+COMMON_PASSWORDS = load_common_passwords('common_password.txt')
 
 
 def check_password_strength(password):
