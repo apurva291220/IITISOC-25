@@ -101,21 +101,22 @@ def scan_folder(folder_path):
     return "\n".join(output)
 
 # GUI part
-def browse_folder():
-    folder_selected = filedialog.askdirectory()
-    if folder_selected:
-        results_box.delete('1.0', tk.END)
-        output = scan_folder(folder_selected) #scans all mail provided in folder
-        results_box.insert(tk.END, output)
+def load_ui(frame, back_callback):
+    for widget in frame.winfo_children():
+        widget.destroy()
 
-root = tk.Tk()
-root.title("Malicious Mail Identifier")
+    tk.Button(frame, text="← Back", command=back_callback).pack(anchor="nw", padx=10, pady=10)
 
-browse_btn = tk.Button(root, text="Select Emails Folder", command=browse_folder)
-browse_btn.pack(pady=10)
+    result_box = scrolledtext.ScrolledText(frame, width=90, height=20, font=("Consolas", 11))
+    result_box.pack(pady=10)
 
-results_box = scrolledtext.ScrolledText(root, width=100, height=30, font=("Consolas", 15))
-results_box.pack(padx=10, pady=10)
+    def browse():
+        folder = filedialog.askdirectory()
+        if folder:
+            result = scan_folder(folder)
+            result_box.delete('1.0', tk.END)
+            result_box.insert(tk.END, result)
+    tk.Button(frame, text="Select Folder to Scan (.eml)", command=browse).pack(pady=5)    
 
-root.mainloop()
+
 
