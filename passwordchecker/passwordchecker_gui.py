@@ -65,31 +65,34 @@ def check_password_strength(password):
 
     return strength, recommendations
 
-# GUI part 
-def run_gui():
-    def check():
-        password = entry.get()
-        strength, recommendations = check_password_strength(password)
-        result = f"Password Strength: {strength}\n\n"
-        if recommendations:
-            result += "Recommendations:\n" + "\n".join(f"- {r}" for r in recommendations)
-        else:
-            result += "Your password is strong. Good job!"
-        messagebox.showinfo("Result", result)
+def load_ui(frame, back_callback): #load GUI into frame
+    for widget in frame.winfo_children():
+        widget.destroy()
 
-    root = tk.Tk()
-    root.title("Password Strength Checker")
-    root.geometry("400x250")
-
-    tk.Label(root, text="Enter your password:").pack(pady=10)
-    entry = tk.Entry(root, show="*", width=30)
+    tk.Button(frame, text="← Back", command=back_callback).pack(anchor="nw", padx=10, pady=10)
+     
+    tk.Label(frame, text="Enter your password:", font=("Cambria", 16, "bold")).pack(pady=10)
+    # Password entry
+    entry_var = tk.StringVar()
+    entry = tk.Entry(frame, textvariable=entry_var, show="*", width=60)
     entry.pack(pady=5)
 
-    tk.Button(root, text="Check Strength", command=check).pack(pady=15)
+# Toggle show/hide
+    def toggle_password():
+      if show_password_var.get():
+        entry.config(show="")  # Show password
+      else:
+        entry.config(show="*")  # Hide password
 
-    root.mainloop()
-    
-if __name__ == "__main__":
-    run_gui()
+    show_password_var = tk.BooleanVar()
+    tk.Checkbutton(frame, text="Show Password", variable=show_password_var, command=toggle_password).pack(pady=5)
 
 
+    def check():
+      password = entry.get()
+      strength, recommendations = check_password_strength(password)
+      result = f"Password Strength: {strength}\n\n"
+      result += "\n".join(f"- {r}" for r in recommendations) if recommendations else "Your password is strong!"
+      messagebox.showinfo("Result", result)
+
+    tk.Button(frame, text="Check Strength",  font=("Cambria", 14, "bold"), command=check).pack(pady=15)    
