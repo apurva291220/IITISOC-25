@@ -1,0 +1,106 @@
+.container{
+    display: flex;
+    margin: 0%;
+    background-color: rgb(236, 236, 236);
+}
+
+.left-half , .right-half{
+    flex: 1;
+}
+
+.left-half{
+    padding-left: 17.5%;
+    padding-top: 10%;
+    padding-right: 0%;
+    padding-bottom: 20%;
+}
+
+.right-half{
+    padding-right: 9%;
+    padding-top: 8%;
+    padding-left: 2%;
+    
+}
+
+
+
+h2{
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+}
+
+p{
+    margin-top: 1%;
+}
+
+fieldset {
+    height: 8.4cm;
+    width: 9.7cm;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 8px 10px rgba(2, 2, 2, 0.1);
+    border: none;
+}
+
+#Username{
+    height: 1.3cm;
+    width: 9cm;
+    margin-top: 3%;
+    margin-left: 1.5%;
+    margin-bottom: 3%;
+    border-radius: 8px;
+    border-color: rgb(214, 214, 214);
+    padding-left: 4%;
+    font-size: medium;
+}
+
+#password{
+    height: 1.3cm;
+    width: 9cm;
+    margin-top: 0%;
+    margin-left: 1.5%;
+    margin-right: 3%;
+    border-radius: 8px;
+    border-color: rgb(214, 214, 214);
+    padding-left: 4%;
+    font-size: medium;
+}
+
+#login{
+    height: 1.3cm;
+    width: 9.5cm;
+    margin-top: 5%;
+    margin-left: 1.5%;
+    margin-right: 3%;
+    margin-bottom: 3%;
+    background-color: #1877f2;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+}
+
+#forgotten{
+    border: none;
+    background-color: white;
+    color: #1877f2;
+    padding-left: 35%;
+    margin-bottom: 5%;
+    
+}
+
+
+
+#newacc{
+    height: 1.3cm;
+    width: 6cm;
+    border-radius: 8px;
+    background-color: rgb(28, 176, 28);
+    color: white;
+    border: none;
+    margin-left: 20%;
+    font-size: large;
+    font-weight: bold;
+}
+
