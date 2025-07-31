@@ -2,6 +2,7 @@ import tkinter as tk
 import os, subprocess, platform
 from tkinter import messagebox
 import webbrowser
+from tkPDFViewer import tkPDFViewer as pdf
 
 import password_guiintegrated
 import malicious_guiintegrated
@@ -19,20 +20,17 @@ def clear_frame(frame):
         widget.destroy()
 
 def open_user_manual():
-    manual_path = os.path.join(os.path.dirname(__file__), "User_Manual.docx")
+    manual_path = os.path.join(os.path.dirname(__file__), "User_Manual.pdf")
     if not os.path.exists(manual_path):
         messagebox.showerror("Error", f"Manual not found: {manual_path}")
         return
-    try:
-        system = platform.system()
-        if system == "Windows":
-            os.startfile(manual_path)
-        elif system == "Darwin":  # macOS
-            subprocess.call(["open", manual_path])
-        else:  # Linux or others
-            subprocess.call(["xdg-open", manual_path])
-    except Exception as e:
-        messagebox.showerror("Error", f"Could not open the manual:\n{e}")
+    viewer_win = tk.Toplevel()
+    viewer_win.title("User Manual")
+    viewer_win.geometry("700x800")
+
+    v1 = pdf.ShowPdf()
+    pdf_display = v1.pdf_view(viewer_win, pdf_location=manual_path, width=100, height=100)
+    pdf_display.pack(fill="both", expand=True)
 
 def load_keylogger_demo(frame, back_callback):
     """Load the keylogger/phishing demo interface"""
@@ -105,14 +103,12 @@ def main():
         tk.Button(button_frame, text="File Integrity Checker", width=25, height=2,
                   font=FONT_BUTTON, bg=BTN_COLOR, fg=BTN_TEXT_COLOR,
                   command=lambda: integritychecker_guiintegrated.load_ui(content_frame, show_main_menu)).grid(row=2, column=0, pady=10)
-
         
-        
-
         # User Manual Button
         tk.Button(button_frame, text="User Manual", width=25, height=2,
                   font=FONT_BUTTON, bg="#090909", fg="white",
-                  command=open_user_manual).grid(row=4, column=0, pady=10)
+                 command=open_user_manual).grid(row=4, column=0, pady=10)
+
 
     show_main_menu()
     root.mainloop()
