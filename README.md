@@ -13,9 +13,8 @@ A beginner-friendly, multi-module cybersecurity suite designed to help users und
     - [Keylogger & Phishing Page Demo](#keylogger--phishing-page-demo)
     - [File Integrity Checker](#file-integrity-checker)
 - [Installation](#installation)
-- [Directory Structure]
+- [Directory Structure](#directory-structure)
 - [Usage](#usage)
-- [Specifications](#specifications)
 - [Deliverables](#deliverables)
 - [License](#license)
 - [Contact](#contact)
@@ -97,11 +96,13 @@ You can also run individual modules:
 python passwordchecker/passwordchecker.py
 python malicious_mail_identifier/mail_scanner.py
 ```
+
 ---
 
 ## Directory Structure
+```
 
-IITISOC-25/
+- IITISOC-25/
 ├── File_Integrity_Checker/ # Module for file integrity verification using SHA-256 hashes
 ├── Keylogger&Phishing_Demo/ # Educational demo for keylogging and phishing techniques
 ├── malicious_mail_identifier/ # Module to detect phishing and malicious emails
@@ -111,6 +112,8 @@ IITISOC-25/
 ├── README.md # Project documentation and overview
 ├── LICENSE # License information for the project
 └── requirements.txt # Python dependencies list
+
+```
 ---
 
 ## Usage
@@ -121,14 +124,6 @@ IITISOC-25/
  ```
 - **Run Individual Modules:**  
  Check the respective module directories for more specific usage instructions and example commands.
-
----
-
-## Specifications
-
-- **Unified Interface:** CLI or lightweight GUI to select modules
-- **Real-Time Feedback:** Live updates for user actions (e.g., password strength meter)
-- **Documentation:** Included within each module folder—see in-code comments and usage files
 
 ---
 
