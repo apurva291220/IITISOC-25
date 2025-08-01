@@ -109,6 +109,7 @@ python malicious_mail_identifier/mail_scanner.py
 ├── passwordchecker/ # Password strength checking module
 ├── src/ # Source files (shared/common code and utilities)
 ├── gui.py # Main GUI interface script
+├── user_manual 
 ├── README.md # Project documentation and overview
 ├── LICENSE # License information for the project
 └── requirements.txt # Python dependencies list
