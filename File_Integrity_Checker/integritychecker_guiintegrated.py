@@ -5,7 +5,7 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, ttk, scrolledtext
 from datetime import datetime
 
-class FileIntegrityChecker:
+class FileIntegrityChecker: #excluded files/folders
     def __init__(self):
         self.exclude_extensions = ['.mp4', '.avi', '.mov', '.mkv', '.mp3', 
                                  '.wav', '.jpg', '.jpeg', '.png', '.gif', 
@@ -13,7 +13,7 @@ class FileIntegrityChecker:
         self.max_file_size = 100 * 1024 * 1024  # 100MB
         self.target_folders = []
 
-    def calculate_hash(self, filepath):
+    def calculate_hash(self, filepath):#calculating hash function
         try:
             with open(filepath, 'rb') as f:
                 file_hash = hashlib.sha256()
@@ -23,7 +23,7 @@ class FileIntegrityChecker:
         except Exception as e:
             return f"Error calculating hash: {str(e)}"
 
-    def should_exclude(self, filepath):
+    def should_exclude(self, filepath):#exclusion function
         _, ext = os.path.splitext(filepath)
         if ext.lower() in self.exclude_extensions:
             return True
@@ -36,7 +36,7 @@ class FileIntegrityChecker:
         
         return False
 
-    def create_snapshot(self, baseline_file):
+    def create_snapshot(self, baseline_file): #creating baseline function
         results = []
         file_count = 0
         baseline_data = []
