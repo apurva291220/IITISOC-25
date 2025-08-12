@@ -17,6 +17,7 @@ A beginner-friendly, multi-module cybersecurity suite designed to help users und
 - [Usage](#usage)
 - [Deliverables](#deliverables)
 - [License](#license)
+- [About Team Members](#team-memberdetails)
 - [Contact](#contact)
 
 ---
@@ -145,6 +146,18 @@ python malicious_mail_identifier/mail_scanner.py
 Distributed under the MIT License.
 
 ---
+
+## About Team Members
+Team Leader: APURVA BAVISKAR
+Implemented password checker & malicious mail identifier.
+Integrated into GUI.
+
+Team Member: APURVA CHIPTE
+Implemented keylogger,phishing demo & file integrity checker.
+
+---
+
+
 
 ## Contact
 
