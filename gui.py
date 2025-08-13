@@ -12,9 +12,9 @@ for d in MODULE_DIRS:
     if os.path.isdir(full_path):
         sys.path.append(full_path)
 
-from passwordchecker import password_guiintegrated
-from malicious_mail_identifier import malicious_guiintegrated
-from File_Integrity_Checker import integritychecker_guiintegrated
+import password_guiintegrated
+import malicious_guiintegrated
+import integritychecker_guiintegrated
 
 # Appearance
 BG_COLOR = "#f3f3f6"     
@@ -165,6 +165,7 @@ if __name__ == "__main__":
     
 
     
+
 
 
 
