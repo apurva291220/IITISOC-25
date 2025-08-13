@@ -6,7 +6,7 @@ import sys
 
 from passswordchecker import password_guiintegrated
 from mailicious_mail_identifier import malicious_guiintegrated
-from File_Integreity_Checker import integritychecker_guiintegrated
+from File_Integrity_Checker import integritychecker_guiintegrated
 
 # Appearance
 BG_COLOR = "#f3f3f6"     
@@ -157,4 +157,5 @@ if __name__ == "__main__":
     
 
     
+
 
