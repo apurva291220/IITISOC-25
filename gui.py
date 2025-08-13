@@ -4,8 +4,8 @@ from tkinter import messagebox
 import webbrowser
 import sys
 
-from passswordchecker import password_guiintegrated
-from mailicious_mail_identifier import malicious_guiintegrated
+from passwordchecker import password_guiintegrated
+from malicious_mail_identifier import malicious_guiintegrated
 from File_Integrity_Checker import integritychecker_guiintegrated
 
 # Appearance
@@ -157,5 +157,6 @@ if __name__ == "__main__":
     
 
     
+
 
 
