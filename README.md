@@ -1,6 +1,6 @@
 # Cybersecurity Suite for Enhanced Digital Security (IITISOC-25)
 
-A beginner-friendly, multi-module cybersecurity suite designed to help users understand and mitigate digital threats such as weak passwords, phishing emails, credential harvesting, and unauthorized file modifications.
+This is a beginner-friendly, multi-module cybersecurity suite designed to help users understand and mitigate digital threats such as weak passwords, phishing emails, credential harvesting, and unauthorized file modifications.
 
 ---
 
