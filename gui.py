@@ -12,7 +12,7 @@ for d in MODULE_DIRS:
     if os.path.isdir(full_path):
         sys.path.append(full_path)
 
-import password_guiintegrated
+from passwordchecker import password_guiintegrated
 import malicious_guiintegrated
 import integritychecker_guiintegrated
 
@@ -165,6 +165,7 @@ if __name__ == "__main__":
     
 
     
+
 
 
 
