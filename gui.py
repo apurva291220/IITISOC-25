@@ -4,8 +4,15 @@ from tkinter import messagebox
 import webbrowser
 import sys
 
-from passwordchecker import password_guiintegrated
+BASE_DIR = os.path.dirname(__file__)  
+MODULE_DIRS = ['passwordchecker', 'malicious_mail_identifier', 'Keylogger&Phishing_Demo', 'File_Integrity_Checker']
 
+for d in MODULE_DIRS:
+    full_path = os.path.join(BASE_DIR, d)
+    if os.path.isdir(full_path):
+        sys.path.append(full_path)
+
+from passwordchecker import password_guiintegrated
 from malicious_mail_identifier import malicious_guiintegrated
 from File_Integrity_Checker import integritychecker_guiintegrated
 
@@ -158,6 +165,7 @@ if __name__ == "__main__":
     
 
     
+
 
 
 
