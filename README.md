@@ -148,11 +148,11 @@ Distributed under the MIT License.
 ---
 
 ## About Team Members
-Team Leader: APURVA BAVISKAR->
+Team Leader: APURVA BAVISKAR (240003011) -> 
 Implemented password checker & malicious mail identifier.
 Integrated into GUI.
 
-Team Member: APURVA CHIPTE->
+Team Member: APURVA CHIPTE (240021003) -> 
 Implemented keylogger,phishing demo & file integrity checker.
 
 ---
